@@ -4,7 +4,7 @@ import Plot from 'react-plotly.js';
 export default function Stock() {
   const [stockChartXValues, setStockChartXValues] = useState([]);
   const [stockChartYValues, setStockChartYValues] = useState([]);
-  const [hideRaw, setHideRaw] = useState(true);
+  const [hideRaw, setHideRaw] = useState(false);
 
   function fetchStock() {
     // const API_KEY = import.meta.env.VITE_ALPHAVANTGE_API_KEY;
