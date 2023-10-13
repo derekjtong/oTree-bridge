@@ -1,4 +1,4 @@
-import Stock from "./Stock";
+import Stock from './Stock';
 
 export default function App() {
   return (

@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import Plot from "react-plotly.js";
+import { useEffect, useState } from 'react';
+import Plot from 'react-plotly.js';
 
 export default function Stock() {
   const [stockChartXValues, setStockChartXValues] = useState([]);
@@ -11,15 +11,15 @@ export default function Stock() {
     // let StockSymbol = "AMZN";
     // let API_CALL = `https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=${StockSymbol}&interval=5min&apikey=${API_KEY}`;
     // API_CALL has limits; use local file instead
-    fetch("./src/TestDataIBM.json")
+    fetch('./src/TestDataIBM.json')
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
         const newStockChartXValue = [];
         const newStockChartYValue = [];
-        for (var key in data["Time Series (5min)"]) {
+        for (var key in data['Time Series (5min)']) {
           newStockChartXValue.push(key);
-          newStockChartYValue.push(data["Time Series (5min)"][key]["1. open"]);
+          newStockChartYValue.push(data['Time Series (5min)'][key]['1. open']);
         }
         setStockChartXValues(newStockChartXValue);
         setStockChartYValues(newStockChartYValue);
@@ -37,12 +37,12 @@ export default function Stock() {
           {
             x: stockChartXValues,
             y: stockChartYValues,
-            type: "scatter",
-            mode: "lines+markers",
-            marker: { color: "red" },
+            type: 'scatter',
+            mode: 'lines+markers',
+            marker: { color: 'red' },
           },
         ]}
-        layout={{ width: 720, height: 440, title: "A Fancy Plot" }}
+        layout={{ width: 720, height: 440, title: 'A Fancy Plot' }}
       />
       <div>
         <button
@@ -70,7 +70,7 @@ export default function Stock() {
           </ul>
         </div>
       ) : (
-        ""
+        ''
       )}
     </div>
   );
