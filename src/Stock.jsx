@@ -31,20 +31,22 @@ export default function Stock() {
 
   return (
     <div>
-      <h1>Stock Market</h1>
-      <Plot
-        data={[
-          {
-            x: stockChartXValues,
-            y: stockChartYValues,
-            type: 'scatter',
-            mode: 'lines+markers',
-            marker: { color: 'red' },
-          },
-        ]}
-        layout={{ width: 720, height: 440, title: 'A Fancy Plot' }}
-      />
-      <div>
+      <h1 className="flex justify-center">Stock Market</h1>
+      <div className="flex justify-center">
+        <Plot
+          data={[
+            {
+              x: stockChartXValues,
+              y: stockChartYValues,
+              type: 'scatter',
+              mode: 'lines+markers',
+              marker: { color: 'red' },
+            },
+          ]}
+          layout={{ autosize: true, title: 'IBM 5min', yaxis: { title: 'Price' }, xaxis: { title: 'Time' } }}
+        />
+      </div>
+      <div className="flex justify-center">
         <button
           className="border border-black text-black p-2 mx-4 hover:bg-slate-200"
           onClick={() => {
@@ -55,7 +57,7 @@ export default function Stock() {
         </button>
       </div>
       {hideRaw ? (
-        <div className="flex mx-4">
+        <div className="flex mx-4 justify-center">
           <ul>
             Time
             {stockChartXValues.map((value, index) => (
