@@ -7,11 +7,10 @@ export default function Stock() {
   const [hideRaw, setHideRaw] = useState(true);
 
   function fetchStock() {
-    const API_KEY = import.meta.env.VITE_ALPHAVANTGE_API_KEY;
-    let StockSymbol = "AMZN";
-    let API_CALL = `https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=${StockSymbol}&interval=5min&apikey=${API_KEY}`;
-
-    // replace with API_CALL
+    // const API_KEY = import.meta.env.VITE_ALPHAVANTGE_API_KEY;
+    // let StockSymbol = "AMZN";
+    // let API_CALL = `https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=${StockSymbol}&interval=5min&apikey=${API_KEY}`;
+    // API_CALL has limits; use local file instead
     fetch("./src/TestDataIBM.json")
       .then((res) => res.json())
       .then((data) => {
