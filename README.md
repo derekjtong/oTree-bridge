@@ -1,3 +1,3 @@
 # Bridger
 
-Real time abstraction layer for zTree
+Real time abstraction layer for oTree
